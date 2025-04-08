@@ -70,7 +70,7 @@ cargo run to poem.txt -I
 
 ## Acknowledgments
 
-- Followed [this documentation] for most of the implementation.
+- Followed [this documentation](https://doc.rust-lang.org/book/ch12-00-an-io-project.html) for most of the implementation.
 
 <!-- URL and Shields stored here -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
