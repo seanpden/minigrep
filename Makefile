@@ -10,7 +10,3 @@ run:
 test:
 	cargo test
 
-fail:
-	cargo run -- searchstring notpoem.txt
-	cargo run -- poem.txt
-	cargo run -- searchsting poem.txt asdf
