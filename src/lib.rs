@@ -42,9 +42,15 @@ impl Config {
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.file_path)?;
 
+    dbg!("ignore_case status:");
+    dbg!(config.ignore_case);
     let results = if config.ignore_case {
+        dbg!("Ignoring case!");
+        dbg!(config.ignore_case);
         search_case_insensitive(&config.query, &contents)
     } else {
+        dbg!("Not ignoring case!");
+        dbg!(config.ignore_case);
         search(&config.query, &contents)
     };
     // Print the results line-by-line
@@ -58,7 +64,7 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
-        .filter(|line| line.contains(&query.to_lowercase()))
+        .filter(|line| line.to_lowercase().contains(&query.to_lowercase()))
         .collect()
 }
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
